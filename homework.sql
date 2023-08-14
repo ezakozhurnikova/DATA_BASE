@@ -3,10 +3,11 @@
 SELECT
 ProductName,
 Price*1.1 AS Price_usd
+FROM [OrderDetails]
+JOIN Products ON OrderDetails.ProductID=Products.ProductID
+ORDER BY Price DESC
 
-FROM [Products]
-ORDER BY Price ASC
-LIMIT 1
+
 
 2. Вывести два самых дорогих товара из категории Beverages из USA
 SELECT
@@ -36,3 +37,5 @@ Categories.CategoryName='Seafood'
 UPDATE Customers
 SET ContactName=''
 WHERE NOT Country = 'China'
+
+
